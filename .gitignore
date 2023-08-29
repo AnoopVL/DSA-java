@@ -1,3 +1,4 @@
 .vscode
-./EvenNoCount/bin
-./LSearch2D/bin
+/EvenNoCount/bin
+/LSearch2D/bin
+/RichCustomer/bin
