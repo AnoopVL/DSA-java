@@ -6,7 +6,12 @@ public class InfiArr{
     }
     static int ans(int[] arr,int target){
         int start = 0;
-        int end = 0;
+        int end = 1;
+        while(target>arr[end]){
+            int newStart=end+1;
+            end=end+(end+start-1)*2;
+        }
+
     }
     static int bs(int[] arr, int target, int start, int end){
         while(start <=end){
