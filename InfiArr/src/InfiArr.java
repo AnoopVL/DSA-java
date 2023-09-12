@@ -1,6 +1,6 @@
 public class InfiArr{
     public static void main(String[] args) {
-        int[] arr= {1,2,3,4,5,6,7,8,9,10,32,45,65,87,98,99,100,112,130,150,203,290,360,370,670,780,1200};
+        int[] arr= {1,2,3,4,5,6,7,8,9,10,32,45,65,87,98,99,100,112};
         int target = 32;
         System.out.println(ans(arr, target));
     }
