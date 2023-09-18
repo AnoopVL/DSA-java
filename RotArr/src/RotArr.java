@@ -3,8 +3,10 @@
 
 public class RotArr{
     public static void main(String[] args) {
-        int[]nums={4,5,6,7,0,1,2};
-        int target=3;
+        int[]nums={3,4,5,6,1,2};
+        int target=2;
+        // int[]nums={4,5,6,7,0,1,2};
+        // int target=3;
         System.out.println(pivot(nums));
         System.out.println(search(nums, target));
     }
@@ -16,7 +18,7 @@ public class RotArr{
         if(nums[pivot]==target){
             return pivot;
         }
-        if(target>nums[0]){
+        if(target>=nums[0]){
             return bs(nums, target, 0, pivot-1);
         }
         return bs(nums, target, pivot+1, nums.length-1);
@@ -43,7 +45,7 @@ public class RotArr{
             int mid=start+(end-start)/2;
             if(mid<end && arr[mid]>arr[mid+1]){
                 return mid;
-            }
+            }                                                               // {3,4,5,6,1,2}
             if(mid>start && arr[mid]<arr[mid-1]){
                 return mid-1;
             }
@@ -51,7 +53,7 @@ public class RotArr{
                 end=mid-1;
             }
             else{
-                start=end+1;
+                start=mid+1;
             }
         }
         return -1;
