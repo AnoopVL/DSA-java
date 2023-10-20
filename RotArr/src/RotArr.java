@@ -45,7 +45,7 @@ public class RotArr{
             int mid=start+(end-start)/2;
             if(mid<end && arr[mid]>arr[mid+1]){
                 return mid;
-            }                                                               // {3,4,5,6,1,2}
+            }                                                                // {3,4,5,6,1,2}
             if(mid>start && arr[mid]<arr[mid-1]){
                 return mid-1;
             }
