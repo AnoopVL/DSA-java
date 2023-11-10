@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "missNums",
+      "request": "launch",
+      "mainClass": "missNums",
+      "projectName": "JavaProjects_f6876e49"
+    },
+    {
+      "type": "java",
       "name": "cycS",
       "request": "launch",
       "mainClass": "cycS",
