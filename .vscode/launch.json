@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "dupNum",
+      "request": "launch",
+      "mainClass": "dupNum",
+      "projectName": "JavaProjects_f6876e49"
+    },
+    {
+      "type": "java",
       "name": "missNums",
       "request": "launch",
       "mainClass": "missNums",
