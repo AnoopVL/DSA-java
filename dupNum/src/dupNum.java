@@ -6,7 +6,7 @@
 
 public class dupNum {
 public static void main(String[] args) {
-    int[]arr={4,2,5,7,3,2,1};
+    int[]arr={1,3,4,2,2};
     System.out.println(findDuplicate(arr));
 }
 static public int findDuplicate(int[] nums) {
@@ -24,7 +24,7 @@ static public int findDuplicate(int[] nums) {
         for (int index = 0; index < nums.length; index++) {
             int correct=nums[index]-1;
             if (index!=correct) {
-                missing=index+1;
+                missing=nums[index];
             }
         }
         return missing;
