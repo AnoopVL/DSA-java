@@ -12,8 +12,7 @@ class Solution {
         }
         ArrayList<Integer> ans = new ArrayList<>();
         for (int index = 0; index < nums.length; index++) {
-            int correctPos=nums[index]-1;
-            if (index!=correctPos) {
+            if (nums[index]!=index+1) {
                 ans.add(nums[index]);
             }
         }
