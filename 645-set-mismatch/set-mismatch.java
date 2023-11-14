@@ -10,15 +10,16 @@ class Solution {
                 i++;
             }
         }
-        int[]ans={-1,-1};
+        // int[]ans={-1,-1};
         for (int index = 0; index < nums.length; index++) {
             int correctPos=nums[index]-1;
             if (index!=correctPos) {
-                ans[0]=nums[index];
-                ans[1]=index+1;
+                // ans[0]=nums[index];
+                // ans[1]=index+1;
+                return new int[] {nums[index], index+1};
             }
         }
-        return ans;
+        return new int[] {-1,-1};
     }
     public void swap(int[]nums, int i, int correctPos){
         int temp=nums[i];
