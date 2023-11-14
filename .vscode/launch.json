@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "allDupNum",
+      "request": "launch",
+      "mainClass": "allDupNum",
+      "projectName": "JavaProjects_f6876e49"
+    },
+    {
+      "type": "java",
       "name": "dupNum",
       "request": "launch",
       "mainClass": "dupNum",
