@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "setMismatch",
+      "request": "launch",
+      "mainClass": "setMismatch",
+      "projectName": "JavaProjects_f6876e49"
+    },
+    {
+      "type": "java",
       "name": "allDupNum",
       "request": "launch",
       "mainClass": "allDupNum",
