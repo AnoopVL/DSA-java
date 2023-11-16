@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "missPositive",
+      "request": "launch",
+      "mainClass": "missPositive",
+      "projectName": "JavaProjects_f6876e49"
+    },
+    {
+      "type": "java",
       "name": "setMismatch",
       "request": "launch",
       "mainClass": "setMismatch",
