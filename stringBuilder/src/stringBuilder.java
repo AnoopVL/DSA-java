@@ -14,5 +14,7 @@ public class stringBuilder {
         String a3 = new String("anoop");
         String a4 = new String("anoop");
         System.out.println(a3==a4); //false
+        System.out.println(new int[] {1,2,3,4,5}); //[I@d716361
+        
     }
 }
