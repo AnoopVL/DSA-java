@@ -6,6 +6,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "starPattern",
+      "request": "launch",
+      "mainClass": "starPattern",
+      "projectName": "JavaProjects_f6876e49"
+    },
+    {
+      "type": "java",
+      "name": "stringBuilder",
+      "request": "launch",
+      "mainClass": "stringBuilder.src.stringBuilder",
+      "projectName": "JavaProjects_f6876e49"
+    },
+    {
+      "type": "java",
       "name": "missPositive",
       "request": "launch",
       "mainClass": "missPositive",
