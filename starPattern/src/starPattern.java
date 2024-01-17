@@ -8,10 +8,19 @@ public class starPattern {
     }
     public static void strPtrn(int row, int col){
         for (int i = 0; i < row; i++) {
-            for (int j = 0; j <col; j++) {
+            for (int j = 0; j <=i; j++) {
                 System.out.print("*");
             }
             System.out.println("\n");
         }
     }
+    // 4x4 star pattern
+    // public static void strPtrn(int row, int col){
+    //     for (int i = 0; i < row; i++) {
+    //         for (int j = 0; j <col; j++) {
+    //             System.out.print("*");
+    //         }
+    //         System.out.println("\n");
+    //     }
+    // }
 }
