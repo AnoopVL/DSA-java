@@ -1,7 +1,7 @@
 public class RecursionPattern {
 
     public static void main(String[] args) {
-        // reverseLeftTriangle(5, 0);
+        reverseLeftTriangle(5, 0);
         leftTriangle(5, 0);
     }
     public static void reverseLeftTriangle(int row, int col){
