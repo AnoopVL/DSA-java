@@ -22,16 +22,16 @@ public class starPattern {
                 System.out.println("\n");
             }
         }
-    //inverted left star pyramid
-    // public static void strPtrn(int row, int col){
-    //     for (int i = row; i >=0; i--) {
-    //         for (int j = i; j >=0; j--) {
-    //             System.out.print("*");
-    //             System.out.print("\t");
-    //         }
-    //         System.out.println("\n");
-    //     }
-    // }
+    // inverted left star pyramid
+    public static void strPtrn(int row, int col){
+        for (int i = row; i >=0; i--) {
+            for (int j = i; j >=0; j--) {
+                System.out.print("*");
+                System.out.print("\t");
+            }
+            System.out.println("\n");
+        }
+    }
     // left pyramid
     // public static void strPtrn(int row, int col){
     //     for (int i = 0; i < row; i++) {
