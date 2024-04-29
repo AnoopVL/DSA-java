@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "fibrecursion",
+      "request": "launch",
+      "mainClass": "recursion.src.fibrecursion",
+      "projectName": "JavaProjects_f6876e49"
+    },
+    {
+      "type": "java",
       "name": "starPattern",
       "request": "launch",
       "mainClass": "starPattern",
