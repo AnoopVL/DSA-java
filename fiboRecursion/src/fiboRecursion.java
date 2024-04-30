@@ -2,7 +2,8 @@ package fiboRecursion.src;
 
 public class fiboRecursion {
     public static void main(String[] args) {
-        System.out.println(fibonacci(8));
+        int ans = fibonacci(4);
+        System.out.println(ans);
     }
     public static int fibonacci(int n){
         if(n<2){
