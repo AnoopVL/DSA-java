@@ -28,4 +28,11 @@ public class printNos {
         System.out.println(fact);
         return fact;
     }
+    static int sumOfNos(int n){
+        if(n==0){
+            return n;
+        }
+        
+        return 0;
+    }
 }
