@@ -54,6 +54,6 @@ public class printNos {
             count++;
         }
         totalZeros(n/10);
-        return count;
+        
     }
 }
