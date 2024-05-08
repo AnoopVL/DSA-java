@@ -7,7 +7,8 @@ public class printNos {
         // factorial(5);
         // System.out.println(sumOfNos(5));
         // System.out.println(sumOfDigits(53652356));
-        System.out.println(totalZeros(20104));
+        // System.out.println(totalZeros(20104));
+        System.out.println(countZeros(10390));
     }
     static void printReverseNos(int n){
         if (n<0) {
@@ -45,15 +46,17 @@ public class printNos {
         int sum = (n%10) + sumOfDigits(n/10);
         return sum;
     }
-    static int totalZeros(int n){
-        if(n==0){
-            return 1;
-        }
-        int count = 0;
-        if((n%10)==0){
-            count++;
-        }
-        totalZeros(n/10);
-        
+    static int countZeros(int n){
+        return helper(n, 0);
+    }
+    static int helper(int n, int c){
+       if(n==0){
+        return c;
+       }
+       int rem = n%10;
+       if(rem==0){
+        return helper(n/10, c+1);
+       }
+       return helper(n/10,c);
     }
 }
