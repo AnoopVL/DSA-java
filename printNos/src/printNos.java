@@ -8,7 +8,7 @@ public class printNos {
         // System.out.println(sumOfNos(5));
         // System.out.println(sumOfDigits(53652356));
         // System.out.println(totalZeros(20104));
-        System.out.println(countZeros(10390));
+        // System.out.println(countZeros(10390));
     }
     static void printReverseNos(int n){
         if (n<0) {
@@ -58,5 +58,12 @@ public class printNos {
         return helper(n/10, c+1);
        }
        return helper(n/10,c);
+    }
+    
+    static int numberOfSteps(int n){
+        return helperNOS(n, 0);
+    }
+    static int helperNOS(int n, int steps){
+        
     }
 }
