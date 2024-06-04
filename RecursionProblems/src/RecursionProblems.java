@@ -4,22 +4,22 @@ import java.util.Arrays;
 public class RecursionProblems {
 
     public static void main(String[] args) {
-        String a = "anoop";
+        String a = "abc";
         // System.out.println(skipChar(a));
         System.out.println(subset("", a));
     }
-    public static String skipChar(String str){
-        if (str.isEmpty()) {
-            return "";
-        }
-         char ch = str.charAt(0);
-         if (ch == 'o') {
-            return skipChar(str.substring(1));
-         }
-         else{
-            return ch + skipChar(str.substring(1));
-         }
-    }
+    // public static String skipChar(String str){
+    //     if (str.isEmpty()) {
+    //         return "";
+    //     }
+    //      char ch = str.charAt(0);
+    //      if (ch == 'o') {
+    //         return skipChar(str.substring(1));
+    //      }
+    //      else{
+    //         return ch + skipChar(str.substring(1));
+    //      }
+    // }
     public static ArrayList<String> subset(String processed, String unprocessed){
         if (unprocessed.isEmpty()) {
             ArrayList<String> list = new ArrayList<>();
