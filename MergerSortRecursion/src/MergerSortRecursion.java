@@ -4,7 +4,7 @@ public class MergerSortRecursion {
 
     public static void main(String[] args) {
         int[] arr = {5,2,1,4,3};
-        mergeSort(arr);
+        arr = mergeSort(arr);
         System.out.println(Arrays.toString(arr));
     }
     public static int[] mergeSort(int[] arr){
