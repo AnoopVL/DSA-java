@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Subset",
+      "request": "launch",
+      "mainClass": "Subset",
+      "projectName": "JavaProjects_f6876e49"
+    },
+    {
+      "type": "java",
       "name": "RecursionProblems",
       "request": "launch",
       "mainClass": "RecursionProblems",
