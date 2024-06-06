@@ -6,6 +6,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "RecursionDiceRoll",
+      "request": "launch",
+      "mainClass": "RecursionDiceRoll",
+      "projectName": "JavaProjects_f6876e49"
+    },
+    {
+      "type": "java",
+      "name": "Permutation",
+      "request": "launch",
+      "mainClass": "Permutation",
+      "projectName": "JavaProjects_f6876e49"
+    },
+    {
+      "type": "java",
       "name": "Subset",
       "request": "launch",
       "mainClass": "Subset",
