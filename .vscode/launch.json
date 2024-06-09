@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Recursion_Nqueens",
+      "request": "launch",
+      "mainClass": "Recursion_Nqueens",
+      "projectName": "JavaProjects_f6876e49"
+    },
+    {
+      "type": "java",
       "name": "MazeProblem",
       "request": "launch",
       "mainClass": "MazeProblem",
