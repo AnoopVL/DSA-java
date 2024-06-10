@@ -23,7 +23,7 @@ public class starPattern {
             }
         }
     // inverted left star pyramid
-    public static void strPtrn(int row, int col){
+    public static void strPtrnPyd(int row, int col){
         for (int i = row; i >=0; i--) {
             for (int j = i; j >=0; j--) {
                 System.out.print("*");
