@@ -6,7 +6,12 @@ class Solution {
         int gcd = gcd(str1.length(), str2.length());
         return str1.substring(0,gcd);
     }
-    private int gcd(int str1Length, int str2Length){
-        return str2Length == 0 ? str1Length : gcd(str2Length, str1Length % str2Length);
+    private int gcd(int str1Len, int str2Len){
+        if(str2Len == 0){
+            return str1Len;
+        }
+        else{
+            return gcd(str2Len, str1Len % str2Len);
+        }
     }
 }
