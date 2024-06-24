@@ -17,8 +17,8 @@ class Solution {
     }
     public boolean canFinishBananas(int[] piles, int k, int h){
          long hours = 0;  // Change to long to prevent overflow
-        for (int pile : piles) {
-            hours += (pile + k - 1) / k;  // Ceiling division
+        for (int i= 0; i < piles.length; i++) {
+            hours += (piles[i] + k - 1) / k;  // Ceiling division
             if (hours > h) return false;  // Early exit if hours exceed h
         }
         return true;
