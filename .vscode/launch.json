@@ -6,6 +6,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "demo",
+      "request": "launch",
+      "mainClass": "demo",
+      "projectName": "JavaProjects_f6876e49"
+    },
+    {
+      "type": "java",
+      "name": "main",
+      "request": "launch",
+      "mainClass": "main",
+      "projectName": "JavaProjects_f6876e49"
+    },
+    {
+      "type": "java",
       "name": "Recursion_Nqueens",
       "request": "launch",
       "mainClass": "Recursion_Nqueens",

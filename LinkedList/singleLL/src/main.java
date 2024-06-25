@@ -8,21 +8,16 @@ public class main {
         list.insertFirst(2);
         list.insertFirst(9);
         list.insertFirst(3);
-        list.insertFirst(22);
+        list.insertFirst(23);
+        list.insertFirst(7);
+        list.insertFirst(4);
         list.display();
         System.out.println();
-        list.insertLast(8);
+        System.out.println("Using recusion: ");
+        list.insertRec(4, 2);
         list.display();
+        list.LLreverseRecuresion(list.head);
         System.out.println();
-        list.insertAt(1, 3);
-        list.display();
-        System.out.println();
-        // list.deleteFirst();
-        // list.display();
-        // System.out.println();
-        // list.deleteLast();
-        // list.display();
-        System.out.println(list.deleteIndex(3));
         list.display();
     }
 }

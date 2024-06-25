@@ -3,11 +3,26 @@
  */
 public class singleLL {
 
-    private Node head;
-    private Node tail;
-    private int size;
+    public Node head;
+    public Node tail;
+    public int size;
     public singleLL(){
         this.size = 0;
+    }
+
+    public void insertRec(int val, int index){
+        head = insertRec(val, index, head);
+    }
+
+    private Node insertRec(int val, int index, Node node){
+        if (index == 0) {
+            Node tempNode = new Node(val, node);
+            size++;
+            return tempNode;
+        }
+        node.next = insertRec(val, index-1, node.next);
+        // node.next = insertRec(val, index--, node.next); If we use index--, it throws nullpointer error
+        return node;
     }
 
     public void insertFirst(int val){
@@ -88,6 +103,17 @@ public class singleLL {
             node = node.next;
         }
         return node;
+    }
+
+    public void LLreverseRecuresion(Node node){
+        if(node == tail){
+            head = tail;
+            return;
+        }
+        LLreverseRecuresion(node.next);
+        tail.next = node;
+        tail = node;
+        tail.next = null;
     }
 
     public void display(){

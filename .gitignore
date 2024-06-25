@@ -1,4 +1,4 @@
-.vscode
+/.vscode
 /EvenNoCount/bin
 /LSearch2D/bin
 /RichCustomer/bin
@@ -31,3 +31,4 @@
 /SudokuSolver/bin
 /LinkedList/doubleLL/bin
 /LinkedList/singleLL/bin
+/_Leetcode_ques_debug
