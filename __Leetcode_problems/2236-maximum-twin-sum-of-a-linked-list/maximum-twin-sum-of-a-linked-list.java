@@ -40,6 +40,7 @@ class Solution {
             first = first.next;
             last = last.next;
         }
+        System.gc();
         return maxSum;      
     }
 }
