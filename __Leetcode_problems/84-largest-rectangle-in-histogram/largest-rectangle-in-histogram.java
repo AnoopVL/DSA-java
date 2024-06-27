@@ -14,8 +14,10 @@ class Solution {
         int i = heights.length;
         while(!stack.isEmpty()){
             maxArea = getMax(heights, stack, maxArea, i);
-        }            
+        }      
+        System.gc();      
         return maxArea;
+        
     }
     public int getMax(int[] arr, Stack<Integer> stack, int max, int i ){
         int area = 0;
