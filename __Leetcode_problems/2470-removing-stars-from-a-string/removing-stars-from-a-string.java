@@ -11,7 +11,7 @@ class Solution {
             else
                 w[j++] = b;
         }
-        
+        System.gc();
         return (new String(w, 0, j));
     }
 }
