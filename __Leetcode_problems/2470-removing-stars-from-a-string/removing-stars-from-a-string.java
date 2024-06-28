@@ -9,6 +9,7 @@ class Solution {
                 ans.deleteCharAt(ans.length() -1);
             }
         }
+        System.gc();
         return ans.toString();
     }
 }
