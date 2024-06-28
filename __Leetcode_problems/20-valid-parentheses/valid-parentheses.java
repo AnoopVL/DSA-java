@@ -23,6 +23,7 @@ class Solution {
                 }
             }
         }
+        System.gc();
         return stack.isEmpty();
     }
 }
