@@ -8,6 +8,7 @@ class Solution {
         for(int i = 0; i<4; i++){
             res = Math.min(res, nums[n-4+i] - nums[i]);
         }
+        System.gc();
         return res;
     }
 }
