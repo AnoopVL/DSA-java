@@ -7,6 +7,7 @@ class Solution {
             total += numBottles;
             numBottles += empty;
         }
+        System.gc();
         return total;
     }
 }
