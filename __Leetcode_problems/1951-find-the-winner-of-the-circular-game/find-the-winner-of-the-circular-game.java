@@ -14,6 +14,7 @@ class Solution {
             }
             lastRemoved = members.poll();
         }
+        System.gc();
         return lastRemoved;
     }
 }
