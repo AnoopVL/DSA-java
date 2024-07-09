@@ -7,6 +7,7 @@ class Solution {
             runTime += a[1];
             wait += runTime-a[0];
         }
+        System.gc();
         return wait/customers.length;
     }
 }
