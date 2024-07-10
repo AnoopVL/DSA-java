@@ -12,6 +12,7 @@ class Solution {
                 stack.push(logs[i]);
             }
         }
+        System.gc();
         return stack.size();
     }
 }
