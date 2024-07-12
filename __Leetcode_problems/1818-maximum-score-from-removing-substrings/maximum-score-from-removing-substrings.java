@@ -28,6 +28,7 @@ class Solution {
             }
         }
         result += Math.min(aCount, bCount) * lesser;
+        System.gc();
         return result;
     }
 }
