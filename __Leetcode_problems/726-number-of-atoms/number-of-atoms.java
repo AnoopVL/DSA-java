@@ -38,6 +38,7 @@ class Solution {
             int count = result.get(element);
             if (count > 1) sb.append(count);
         }
+        System.gc();
         return sb.toString();
     }
 }
