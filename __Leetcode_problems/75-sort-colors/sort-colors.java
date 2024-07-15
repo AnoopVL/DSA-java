@@ -13,10 +13,12 @@ class Solution {
                 high--;
             }
         }
+        System.gc();
     }
     public void swap(int[] nums, int a, int b){
         int temp = nums[a];
         nums[a] = nums[b];
         nums[b] = temp;
     }
+
 }
