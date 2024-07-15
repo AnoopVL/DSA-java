@@ -1,8 +1,8 @@
 class Solution {
     public int strStr(String haystack, String needle) {
-        int haylength=haystack.length();
-        int needlelength=needle.length();
-        if(haylength<needlelength)
+        // int haylength=haystack.length();
+        // int needlelength=needle.length();
+        if(haystack.length()<needle.length())
             return -1;
         for(int i=0;i<=haystack.length()-needle.length();i++){
             int j=0;
@@ -12,7 +12,6 @@ class Solution {
                 return i;
             }
         }
-        System.gc();
         return -1;
     }
 }
