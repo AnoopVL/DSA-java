@@ -10,6 +10,7 @@ class Solution {
             }
             ans.append(first.charAt(i));
         }
+        System.gc();
         return ans.toString();
     }
 }
