@@ -10,7 +10,7 @@ class Solution {
             }
             numMap.put(nums[i], i);
         }
-
-        return new int[]{}; // No solution found
+        System.gc();
+        return new int[]{};
     }
 }
