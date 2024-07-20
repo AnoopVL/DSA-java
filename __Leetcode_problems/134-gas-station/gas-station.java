@@ -13,6 +13,7 @@ class Solution {
             }
         }
         // If total gas is greater than or equal to total cost, return the starting station index
+        System.gc();
         return totalTank >= 0 ? startingStation : -1;
     }
 }
