@@ -2,6 +2,7 @@ class Solution {
     public String[] sortPeople(String[] names, int[] heights) {
         int n= heights.length;
         sort(heights, names, 0, n-1);
+        System.gc();
         return names;
     }
 
