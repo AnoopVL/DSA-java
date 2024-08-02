@@ -9,7 +9,7 @@ class Solution {
         for(String s: word2){
             s2.append(s);
         }
-
+        System.gc();
         return s1.toString().equals(s2.toString());
     }
 }
