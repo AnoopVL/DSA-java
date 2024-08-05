@@ -10,6 +10,18 @@ public class HashMap {
         map.put("AVL", 34);
 
         System.out.println(map.get("Anoop"));
+        System.out.println(map.getOrDefault("Zeno", 07));
 
+        HashSet<Integer> hset = new HashSet<>();
+        hset.add(23);
+        hset.add(2);
+        hset.add(23);
+        hset.add(24);
+        hset.add(13);
+        hset.add(2);
+        hset.add(76);
+
+        System.out.println(hset);
+        System.out.println(hset.size());
     }
 }
