@@ -8,10 +8,12 @@ class Solution {
             if(map.get(s) == 1){
                 --k;
                 if(k==0){
+                    System.gc();
                     return s;
                 }
             }
         }
+        System.gc();
         return "";
     }
 }
