@@ -1,11 +1,16 @@
 class Solution {
+    Map<Integer, Integer> integerMap = new HashMap<>();
     public int fib(int n) {
-        if(n==0){
-            return 0;
+        if (n <= 1) {
+            return n;
         }
-        if(n==1){
-            return 1;
+
+        if (integerMap.containsKey(n)) {
+            return integerMap.get(n);
         }
-        return fib(n-1) + fib(n-2);
+
+        int val = fib(n - 1) + fib(n - 2);
+        integerMap.put(n, val);
+        return val;
     }
 }
