@@ -16,6 +16,7 @@ class Solution {
             }
             row++;
         }
+        System.gc();
         return ans;
     }
 }
