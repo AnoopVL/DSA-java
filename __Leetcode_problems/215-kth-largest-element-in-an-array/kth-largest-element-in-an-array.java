@@ -8,6 +8,7 @@ class Solution {
             pq.poll();
             k--;
         }
+        System.gc();
         return pq.peek();
     }
 }
