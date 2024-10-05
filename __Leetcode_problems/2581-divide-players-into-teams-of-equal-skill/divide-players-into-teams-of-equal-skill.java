@@ -1,30 +1,30 @@
 class Solution {
     public long dividePlayers(int[] skill) {
-        int n = skill.length;
-        int teams = n/2;
-        int totalSum=0;
-        HashMap<Integer,Integer> freqMap = new HashMap<>();
-        for(int element : skill){
-            freqMap.put(element, freqMap.getOrDefault(element,0)+1);
-            totalSum += element;
+        int teams = skill.length/2;
+        int totalSum =0;
+        long ans = 0;
+        int i=0, j=0;
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for(int n= 0; n < skill.length; n++){
+            map.put(skill[n], map.getOrDefault(skill[n], 0) + 1);
+            totalSum += skill[n];
         }
-        if(totalSum % teams !=0 ){
+        if(totalSum % teams != 0){
             return -1;
         }
         int targetPoints = totalSum / teams;
-        long res = 0;
         for(int element : skill){
-            if(freqMap.get(element)==0){
+            if(map.get(element)==0){
                 continue;
             }
-            freqMap.put(element, freqMap.get(element)-1);
+            map.put(element, map.get(element)-1);
             int partner = targetPoints - element;
-            if(!freqMap.containsKey(partner) || freqMap.get(partner)==0){
+            if(!map.containsKey(partner) || map.get(partner)==0){
                 return -1;
             }
-            freqMap.put(partner, freqMap.get(partner)-1);
-            res = res + ((long)element * (long)partner);
+            map.put(partner, map.get(partner)-1);
+            ans  += ((long)element * (long)partner);
         }
-        return res;
+        return ans;
     }
 }
