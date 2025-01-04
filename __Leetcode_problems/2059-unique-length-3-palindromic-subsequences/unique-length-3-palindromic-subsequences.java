@@ -5,7 +5,7 @@ class Solution {
         for(int i=0;i<n;i++){
             set.add(s.charAt(i));
         }
-        int count=0;
+        int ans=0;
         for(char ch : set){
             int first=-1;
             int last = -1;
@@ -22,8 +22,8 @@ class Solution {
             for(int i=first+1;i<last;i++){
                 set1.add(s.charAt(i));
             }
-            count += set1.size();
+            ans += set1.size();
         }
-        return count;
+        return ans;
     }
 }
