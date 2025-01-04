@@ -7,19 +7,19 @@ class Solution {
         }
         int ans=0;
         for(char ch : set){
-            int first=-1;
-            int last = -1;
+            int f=-1;
+            int l = -1;
             for(int i=0;i<n;i++){
                 if(ch == s.charAt(i)){
-                    if(first == -1){
-                        first = i;
+                    if(f == -1){
+                        f = i;
                     }
-                    last = i;
+                    l = i;
                 }
             }
-            if(first == last) continue;
+            if(f == l) continue;
             HashSet<Character> set1 = new HashSet<>();
-            for(int i=first+1;i<last;i++){
+            for(int i=f+1;i<l;i++){
                 set1.add(s.charAt(i));
             }
             ans += set1.size();
