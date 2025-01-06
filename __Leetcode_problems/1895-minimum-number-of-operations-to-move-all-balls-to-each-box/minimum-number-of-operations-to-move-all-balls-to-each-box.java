@@ -12,8 +12,8 @@ class Solution {
             for(int j=0; j< ballLoc.size(); j++){
                 minMov += Math.abs(i - ballLoc.get(j));
             }
-            ans[ansIndex] = minMov;
-            ansIndex++;  
+            ans[ansIndex++] = minMov;
+            // ansIndex++;  
         }
         return ans;
     }
