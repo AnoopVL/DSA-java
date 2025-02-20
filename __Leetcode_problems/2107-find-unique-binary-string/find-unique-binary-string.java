@@ -14,7 +14,7 @@ class Solution {
         if(sb.length() == n){
             if(!set.contains(sb.toString())){
                 ans = sb.toString();
-                // return;
+                return;
             }
             return;
         }
