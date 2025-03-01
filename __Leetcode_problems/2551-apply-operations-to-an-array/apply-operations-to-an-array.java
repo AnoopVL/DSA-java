@@ -7,11 +7,10 @@ class Solution {
                 nums[i] = 0;
             }
         }
-        return shiftZerosToRight(nums);
+        return shiftZerosToRight(nums, n);
     }
 
-    private int[] shiftZerosToRight(int[] nums){
-        int n = nums.length;
+    private int[] shiftZerosToRight(int[] nums, int n){
         int index =0;
         for(int num: nums){
             if(num != 0){
