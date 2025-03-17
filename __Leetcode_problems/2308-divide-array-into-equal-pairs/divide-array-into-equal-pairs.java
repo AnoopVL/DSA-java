@@ -1,11 +1,12 @@
 class Solution {
     public boolean divideArray(int[] nums) {
-        HashMap<Integer, Integer> map = new HashMap<>();
-        for(int i=0; i< nums.length; i++){
-            map.put(nums[i], map.getOrDefault(nums[i], 0) +1);
+        int[] freq = new int[501];
+        int n = nums.length;
+        for(int i=0; i< n; i++){
+            freq[nums[i]]++;
         }
-        for(Map.Entry<Integer, Integer> mapEntry: map.entrySet()){
-            if(mapEntry.getValue() % 2 != 0) return false;
+        for(int i=0; i< 501; i++){
+            if(freq[i] % 2 != 0 ) return false;
         }
         return true;
     }
