@@ -8,12 +8,12 @@ class Solution {
     }
     
     public void dfs(int cur, int n, List<Integer> res){
-        if(cur>n)
+        if(cur > n)
             return;
         else{
             res.add(cur);
-            for(int i=0;i<10;++i){
-                if(10*cur+i>n)
+            for(int i=0;i<10;i++){
+                if(10*cur+i > n)
                     return;
                 dfs(10*cur+i, n, res);
             }
