@@ -6,16 +6,15 @@ class Solution {
         int minDifference = Integer.MAX_VALUE;
         for(int i=1; i < n; i++){
             int diff = Math.abs(arr[i] - arr[i-1]);
-            minDifference = Math.min(minDifference, diff);
-        }
-        for(int i=1; i < n; i++){
-            if(Math.abs(arr[i] - arr[i-1]) == minDifference){
-                List<Integer> list = new ArrayList<>();
-                list.add(arr[i-1]);
-                list.add(arr[i]);
-                ansList.add(list);
+            if(diff < minDifference){
+                minDifference = diff;
+                ansList.clear();
+                ansList.add(Arrays.asList(arr[i-1], arr[i]));
+            }else if(diff == minDifference){
+                ansList.add(Arrays.asList(arr[i-1], arr[i]));
             }
         }
+        
         return ansList;
     }
 }
