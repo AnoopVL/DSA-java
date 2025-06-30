@@ -12,7 +12,7 @@ class Solution {
             int maxNum = num + 1;
 
             if (map.containsKey(maxNum)) {
-                result = Math.max(result, map.get(minNum) + map.get(maxNum));
+                result = Math.max(result, map.getOrDefault(minNum, 0) + map.getOrDefault(maxNum, 0));
             }
         }
         return result;
