@@ -1,28 +1,24 @@
 class Solution {
     public boolean isBipartite(int[][] graph) {
+        // dfs approach
         int n = graph.length;
         int[] visited = new int[n];
-        for(int i = 0; i< n; i++){
-            if(visited[i] == 0){
-                if(!isBipartite(visited, graph, n, i)) return false;
+        for(int i = 0; i < n; i++) visited[i] = -1;
+        for(int i = 0; i < n; i++){
+            if(visited[i] == -1){
+                if(dfs(i, 1, visited, graph) == false) return false;
             }
         }
         return true;
     }
 
-    private boolean isBipartite(int[] visited, int[][] graph, int n, int i){
-        Queue<Integer> queue = new LinkedList<>();
-        queue.offer(i);
-        visited[i] = 1;
-        while(!queue.isEmpty()){
-            int node = queue.poll();
-            for(int j : graph[node]){
-                if(visited[j] == 0){
-                    visited[j] = (visited[node] == 1)? 2: 1;
-                    queue.add(j);
-                }else if(visited[j] == visited[node]){
-                    return false;
-                }
+    private boolean dfs(int node, int color, int[] visited, int[][] graph){
+        visited[node] = color;
+        for(int j : graph[node]){
+            if(visited[j] == -1){
+                if(dfs(j, 1 - color, visited, graph) == false) return false;
+            }else if(visited[j] == color){
+                return false;
             }
         }
         return true;
