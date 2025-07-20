@@ -6,15 +6,11 @@ class Solution {
             adj.add(new ArrayList<>());
         }
         int m = preR.length;
+        // // create an array indegree
+        int[] indegree = new int[n];
         for(int i = 0; i < m; i++){
             adj.get(preR[i][1]).add(preR[i][0]);
-        }
-        // create an array indegree
-        int[] indegree = new int[n];
-        for(int i = 0; i < n; i++){
-            for(int j : adj.get(i)){
-                indegree[j]++;
-            }
+            indegree[preR[i][0]]++;
         }
         // create a queue and add all the elements with indegree 0
         Queue<Integer> q = new LinkedList<>();
