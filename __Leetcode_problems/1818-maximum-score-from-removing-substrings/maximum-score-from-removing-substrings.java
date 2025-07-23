@@ -1,34 +1,33 @@
 class Solution {
     public int maximumGain(String s, int x, int y) {
-        int aCount = 0;
-        int bCount = 0;
-        int lesser = Math.min(x,y);
-        int result = 0;
+        if(x > y){
+            return helper(s, "ab", x, y);
+        }else{
+            return helper(s, "ba", y, x);
+        }
+    }
+    // pattern = "ba"
+    private int helper(String s, String pattern, int high, int low){
+        int ans = 0;
+        StringBuilder ip1 = new StringBuilder();
+        for(char ch : s.toCharArray()){
+            ip1.append(ch);
+            int l = ip1.length();
+            if(l >=2 && pattern.charAt(1) == ip1.charAt(l-1) && pattern.charAt(0) == ip1.charAt(l-2)){
+                ip1.setLength(l - 2);
+                ans += high;
+            } 
+        }
 
-        for(int i = 0; i< s.length(); i++){
-            char c = s.charAt(i);
-            if(c > 'b'){
-                result += Math.min(aCount, bCount) * lesser;
-                aCount = 0;
-                bCount = 0;
-            }else if(c == 'a'){
-                if(x < y && bCount > 0){
-                    bCount--;
-                    result+=y;
-                }else{
-                    aCount++;
-                }
-            }else{
-                if(x > y && aCount > 0){
-                    aCount--;
-                    result += x;
-                }else{
-                    bCount++;
-                }
+        StringBuilder ip2 = new StringBuilder();
+        for(char ch : ip1.toString().toCharArray()){
+            ip2.append(ch);
+            int l = ip2.length();
+            if(l >= 2 && pattern.charAt(0) == ip2.charAt(l-1) && pattern.charAt(1) == ip2.charAt(l-2)){
+                ip2.setLength(l-2);
+                ans += low;
             }
         }
-        result += Math.min(aCount, bCount) * lesser;
-        System.gc();
-        return result;
+        return ans;
     }
 }
