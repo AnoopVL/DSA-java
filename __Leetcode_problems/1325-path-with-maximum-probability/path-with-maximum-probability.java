@@ -6,19 +6,19 @@ class Solution {
             g.computeIfAbsent(a, l -> new ArrayList<>()).add(new int[]{b, i});
             g.computeIfAbsent(b, l -> new ArrayList<>()).add(new int[]{a, i});
         }
-        double[] p = new double[n];
-        p[start] = 1d;
+        double[] distance = new double[n];
+        distance[start] = 1d;
         Queue<Integer> q = new LinkedList<>(Arrays.asList(start));
         while (!q.isEmpty()) {
             int cur = q.poll();
             for (int[] a : g.getOrDefault(cur, Collections.emptyList())) {
                 int neighbor = a[0], index = a[1];
-                if (p[cur] * succProb[index] > p[neighbor]) {
-                    p[neighbor] = p[cur] * succProb[index];
+                if (distance[cur] * succProb[index] > distance[neighbor]) {
+                    distance[neighbor] = distance[cur] * succProb[index];
                     q.offer(neighbor);
                 }
             }
         }
-        return p[end];
+        return distance[end];
     }
 }
