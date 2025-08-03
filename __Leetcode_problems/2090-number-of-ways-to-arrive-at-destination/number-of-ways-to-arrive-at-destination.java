@@ -1,14 +1,11 @@
 class Solution {
     public int countPaths(int n, int[][] roads) {
-        List<List<int[]>> graph = new ArrayList<>();
-        for (int i = 0; i < n; i++) {
-            graph.add(new ArrayList<>());
-        }
-        
+        List<List<int[]>> adj = new ArrayList<>();
+        for (int i = 0; i < n; i++) adj.add(new ArrayList<>());
         for (int[] road : roads) {
             int u = road[0], v = road[1], time = road[2];
-            graph.get(u).add(new int[]{v, time});
-            graph.get(v).add(new int[]{u, time});
+            adj.get(u).add(new int[]{v, time});
+            adj.get(v).add(new int[]{u, time});
         }
 
         long[] dist = new long[n];
@@ -19,7 +16,6 @@ class Solution {
 
         PriorityQueue<long[]> pq = new PriorityQueue<>(Comparator.comparingLong(a -> a[0]));
         pq.offer(new long[]{0, 0});
-
         int MOD = 1_000_000_007;
 
         while (!pq.isEmpty()) {
@@ -29,7 +25,7 @@ class Solution {
 
             if (d > dist[node]) continue;
 
-            for (int[] neighbor : graph.get(node)) {
+            for (int[] neighbor : adj.get(node)) {
                 int nextNode = neighbor[0];
                 int time = neighbor[1];
 
