@@ -1,27 +1,47 @@
 class Solution {
-        public int findTheCity(int n, int[][] edges, int distanceThreshold) {
-        int[][] dis = new int[n][n];
-        int res = 0, smallest = n;
-        for (int[] row : dis)
-            Arrays.fill(row, 10001);
-        for (int[] e : edges)
-            dis[e[0]][e[1]] = dis[e[1]][e[0]] = e[2];
-        for (int i = 0; i < n; ++i)
-            dis[i][i] = 0;
-        for (int k = 0; k < n; ++k)
-            for (int i = 0; i < n; ++i)
-                for (int j = 0; j < n; ++j)
-                    dis[i][j] = Math.min(dis[i][j], dis[i][k] + dis[k][j]);
-        for (int i = 0; i < n; i++) {
-            int count = 0;
-            for (int j = 0; j < n; ++j)
-                if (dis[i][j] <= distanceThreshold)
-                    ++count;
-            if (count <= smallest) {
-                res = i;
-                smallest = count;
+    public int findTheCity(int n, int[][] edges, int threshold) {
+        int[][] dist = new int[n][n];
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < n; j++){
+                if(i == j){
+                    dist[i][j] = 0;
+                    continue;
+                } 
+                dist[i][j] = Integer.MAX_VALUE;
             }
         }
-        return res;
+        for(int[] edge : edges){
+            int u = edge[0];
+            int v = edge[1];
+            int wt = edge[2];
+            dist[u][v] = wt;
+            dist[v][u] = wt;
+        }
+        // Floyd Warshall algo- matrix filling
+        for(int via = 0; via < n; via++){
+            for(int i = 0; i < n; i++){
+                for(int j = 0; j < n; j++){
+                    if(dist[i][via] != Integer.MAX_VALUE && dist[via][j] != Integer.MAX_VALUE){
+                        dist[i][j] = Math.min(dist[i][j], dist[i][via] + dist[via][j]);
+                    }
+                }
+            }
+        }
+
+        int minCount = n;
+        int cityNo = -1;
+        for(int city = 0; city < n ; city++){
+            int count = 0;
+            for(int adjCity = 0; adjCity < n; adjCity++){
+                if(city == adjCity) continue;
+                if(dist[city][adjCity] <= threshold) count++;
+            }
+            if(count <= minCount){
+                minCount = count;
+                cityNo = city;
+            }
+        }
+
+        return cityNo;
     }
 }
