@@ -2,7 +2,7 @@ class Solution {
     public int[][] operations = {{100,0},{75,25},{50,50},{25,75}};
    
     public double soupServings(int n) {
-        if(n > 10000) return 1;
+        if(n > 5000) return 1;
         double[][] memo = new double[n+1][n+1];
         for(double[] mem : memo){
             Arrays.fill(mem, -1.0);
