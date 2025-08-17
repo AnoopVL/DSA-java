@@ -1,48 +1,63 @@
 class Solution {
+    class DisjointSet{
+        int[] parent, size;
+        DisjointSet(int n){
+            parent = new int[n];
+            size = new int[n];
+            for(int i = 0; i < n; i++){
+                parent[i] = i;
+                size[i] = 1;
+            }
+        }
+        int find(int x){
+            if(parent[x] != x){
+                parent[x] = find(parent[x]);
+            }
+            return parent[x];
+        }
+        void union(int u, int v){
+            int ulpU = find(u);
+            int ulpV = find(v);
+            if(ulpU == ulpV) return;
+            if(size[ulpU] < size[ulpV]){
+                parent[ulpU] = ulpV;
+                size[ulpV] += size[ulpU];
+            }else{
+                parent[ulpV] = ulpU;
+                size[ulpU] += size[ulpV];
+            }
+        }
+    }
     public int numIslands(char[][] grid) {
-        int m = grid.length;
-        int n = grid[0].length;
-        boolean[][] visited = new boolean[m][n];
-        int ans = 0;
+        int n = grid.length;
+        int m = grid[0].length;
+        DisjointSet ds = new DisjointSet(n * m);
+        int[][] directions = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
 
-        for(int i=0; i< m; i++){
-            for(int j =0; j < n; j++){
-                if(grid[i][j] == '1' && visited[i][j] == false){
-                    helper(i, j, grid, visited, m, n);
-                    ans++;
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < m; j++){
+                if(grid[i][j] == '1'){
+                    int node = i * m + j;  
+                    for(int[] d : directions){
+                        int ni = i + d[0];
+                        int nj = j + d[1];
+                        if(ni >= 0 && ni < n && nj >= 0 && nj < m && grid[ni][nj] == '1'){
+                            int adjNode = ni * m + nj;
+                            ds.union(node, adjNode);
+                        }
+                    }
                 }
             }
-        }
-        return ans;
-    }
+        }     
 
-    private void helper(int i, int j, char[][] grid, boolean[][] visited, int m, int n){
-        Queue<List<Integer>> queue = new LinkedList<>();
-        queue.offer(Arrays.asList(i,j));
-        while(!queue.isEmpty()){
-            List<Integer> currentLoc = queue.poll();
-            int row = currentLoc.get(0);
-            int col = currentLoc.get(1);
-            // search top
-            if(row-1 >= 0 && grid[row-1][col] == '1' && visited[row-1][col] == false){
-                visited[row-1][col] = true;
-                queue.offer(Arrays.asList(row-1, col));
+        HashSet<Integer> uniqueIslands = new HashSet<>();
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < m; j++){
+                if(grid[i][j] == '1'){
+                    uniqueIslands.add(ds.find(i * m + j));
+                }
             }
-            // search bottom
-            if(row+1 < m && grid[row+1][col] == '1' && visited[row+1][col] == false){
-                visited[row+1][col] = true;
-                queue.offer(Arrays.asList(row+1, col));
-            }
-            // search left
-            if(col-1 >= 0 && grid[row][col-1] == '1' && visited[row][col-1] == false){
-                visited[row][col-1] = true;
-                queue.offer(Arrays.asList(row, col-1));
-            }
-            // search right
-            if(col+1 < n && grid[row][col+1] == '1' && visited[row][col+1] == false){
-                visited[row][col+1] = true;
-                queue.offer(Arrays.asList(row, col+1));
-            }
-        }
+        }   
+        return uniqueIslands.size();
     }
 }
