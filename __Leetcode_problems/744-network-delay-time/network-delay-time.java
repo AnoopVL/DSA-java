@@ -1,35 +1,35 @@
 class Solution {
     public int networkDelayTime(int[][] times, int n, int k) {
         ArrayList<ArrayList<int[]>> adj = new ArrayList<>();
-        for(int i= 0; i <= n; i++) adj.add(new ArrayList<>());
-        for(int[] edge: times){
-            int u = edge[0];
-            int v = edge[1];
-            int wt = edge[2];
-            adj.get(u).add(new int[]{v, wt});
+        for(int i = 0; i <= n; i++) adj.add(new ArrayList<>());
+        // adjacency list
+        for(int i = 0; i < times.length; i++){
+            int u = times[i][0];
+            int v = times[i][1];
+            int wt = times[i][2];
+            adj.get(u).add(new int[] {v, wt});
         }
-
-        int[] distance = new int[n+1];
-        Arrays.fill(distance, Integer.MAX_VALUE);
-        distance[k] = 0;
-
-        PriorityQueue<int[]> pq = new PriorityQueue<>((x,y) -> x[1] - y[1]);
+        // create and fill distance array\
+        int[] dist = new int[n+1];
+        Arrays.fill(dist, Integer.MAX_VALUE);
+        dist[k] = 0;
+        // create priority queue(min heap)
+        PriorityQueue<int[]> pq = new PriorityQueue<>((x, y) -> x[1] - y[1]);
         pq.offer(new int[] {k, 0});
         while(!pq.isEmpty()){
             int node = pq.peek()[0];
-            int dist = pq.poll()[1];
+            int weight = pq.poll()[1];
             for(int[] edge : adj.get(node)){
-                if(edge[1] + dist < distance[edge[0]]){
-                    distance[edge[0]] = edge[1] + dist;
-                    pq.offer(new int[]{edge[0], distance[edge[0]]});
+                if(edge[1] + weight < dist[edge[0]]){
+                    dist[edge[0]] = edge[1] + weight;
+                    pq.offer(new int[] {edge[0], dist[edge[0]]});
                 }
             }
         }
-
         int ans = Integer.MIN_VALUE;
         for(int i = 1; i <= n; i++){
-            if(distance[i] == Integer.MAX_VALUE) return -1;
-            ans = Math.max(ans, distance[i]);
+            if(dist[i] == Integer.MAX_VALUE) return -1;
+            ans = Math.max(ans, dist[i]);
         }
         return ans;
     }
