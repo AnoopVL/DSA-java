@@ -3,16 +3,15 @@ class Solution {
         HashMap<Character, Integer> map = new HashMap<>();
         int freqV = 0;
         int freqC = 0;
-        for(int i = 0; i < s.length(); i++){
-            if(isVowel(s.charAt(i))){
-                map.put(s.charAt(i), map.getOrDefault(s.charAt(i), 0) + 1);
-                freqV = Math.max(freqV, map.get(s.charAt(i)));
+        for(char c : s.toCharArray()){
+            if(isVowel(c)){
+                map.put(c, map.getOrDefault(c, 0) + 1);
+                freqV = Math.max(freqV, map.get(c));
             }else{
-                map.put(s.charAt(i), map.getOrDefault(s.charAt(i), 0) + 1);
-                freqC = Math.max(freqC, map.get(s.charAt(i)));
+                map.put(c, map.getOrDefault(c, 0) + 1);
+                freqC = Math.max(freqC, map.get(c));
             }
         }   
-        // if(freqV == 0 || freqC == 0) return 0;
         return freqV + freqC;
     }
     private boolean isVowel(char c){
