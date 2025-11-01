@@ -16,9 +16,9 @@ class Solution {
             return null;
         }
         
-        Set<Integer> numSet = new HashSet<>();
+        Set<Integer> set = new HashSet<>();
         for (int num : nums) {
-            numSet.add(num);
+            set.add(num);
         }
         
         ListNode dummy = new ListNode(0);
@@ -27,7 +27,7 @@ class Solution {
         ListNode current = head;
         
         while (current != null) {
-            if (numSet.contains(current.val)) {
+            if (set.contains(current.val)) {
                 prev.next = current.next;
             } else {
                 prev = current;
